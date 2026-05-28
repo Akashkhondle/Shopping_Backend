@@ -26,4 +26,12 @@ public class UserRepository {
         userDB.put(email,user);
 
     }
+
+    public void deleteUser(String email) {
+        userDB.remove(email);
+    }
+
+    public HashMap<String, ApplicationUser> getDetails() {
+        return userDB;
+    }
 }

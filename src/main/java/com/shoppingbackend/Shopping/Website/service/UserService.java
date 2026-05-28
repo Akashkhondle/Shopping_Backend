@@ -2,11 +2,15 @@ package com.shoppingbackend.Shopping.Website.service;
 
 import com.shoppingbackend.Shopping.Website.model.ApplicationUser;
 import com.shoppingbackend.Shopping.Website.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
 
 @Service
 public class UserService {
-    private UserRepository item = new UserRepository();
+    @Autowired
+    private UserRepository item;
     public void createUser(ApplicationUser user) {
         item.saveUser(user);
     }
@@ -20,4 +24,10 @@ public class UserService {
     public void updateUser(ApplicationUser user,String email) {
         item.updateUser(user,email);
     }
+
+    public void deleteUser(String email) {
+        item.deleteUser(email);
+    }
+
+
 }

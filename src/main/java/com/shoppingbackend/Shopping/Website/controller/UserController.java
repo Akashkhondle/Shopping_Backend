@@ -1,13 +1,20 @@
 package com.shoppingbackend.Shopping.Website.controller;
 
 import com.shoppingbackend.Shopping.Website.model.ApplicationUser;
+import com.shoppingbackend.Shopping.Website.service.AllUserDetails;
 import com.shoppingbackend.Shopping.Website.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class UserController {
 
-    private UserService service = new UserService();
+    @Autowired
+    private AllUserDetails allservice;
+    @Autowired
+    private UserService service;
     @PostMapping("/api/register/user")
     public String registerUser(@RequestBody ApplicationUser user)
     {
@@ -28,5 +35,19 @@ public class UserController {
     {
         service.updateUser(user,email);
         return service.getUser(email);
+    }
+
+    @DeleteMapping("api/user/delete")
+    public String deleteUser(@RequestParam String email)
+    {
+        service.deleteUser(email);
+
+        return "User Deleted Successfully";
+    }
+
+    @GetMapping("/api/user/details")
+    public List<String> getDetails()
+    {
+      return  allservice.getDetails();
     }
 }
