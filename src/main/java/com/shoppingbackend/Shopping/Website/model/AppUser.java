@@ -1,34 +1,41 @@
 package com.shoppingbackend.Shopping.Website.model;
 
-public class ApplicationUser {
-    String firstName;
-    String lastName;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class AppUser {
+    @Id
+    int id;
+    String name;
     String email;
     Long phoneNumber;
+    String address;
     String password;
 
-    public ApplicationUser(String firstName, String lastName, String email, Long phoneNumber, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public AppUser(int id, String name, String email, Long phoneNumber, String address, String password) {
+        this.id = id;
+        this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.address = address;
         this.password = password;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public int getId() {
+        return id;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getName() {
+        return name;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -45,6 +52,14 @@ public class ApplicationUser {
 
     public void setPhoneNumber(Long phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getPassword() {
