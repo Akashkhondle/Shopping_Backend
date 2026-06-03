@@ -1,9 +1,8 @@
 package com.shoppingbackend.Shopping.Website.model;
 
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,22 +13,22 @@ import java.util.UUID;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-public class AppUser {
-    @Id
+@AllArgsConstructor
+public class Product {
     private UUID id;
-    private String name;
-    private int age;
-    @Column(unique = true,nullable = false)
-    private String email;
     @Column(nullable = false)
-    String password;
-    @Column(unique = true,nullable = false)
-    private Long phoneNumber;
+    private String productName;
     @Column(nullable = false)
-    private String address;
+    private int price;
     @Column(nullable = false)
-    private String usertype;
+    private int quantity;
+    private double rating;
+    @Column(nullable = false)
+    private int  totalSoldQuantity;
+    @Column(nullable = false)
+    private String category;
+    @ManyToOne
+    AppUser seller;
 
 }

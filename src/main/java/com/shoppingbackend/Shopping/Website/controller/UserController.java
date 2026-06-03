@@ -1,6 +1,5 @@
 package com.shoppingbackend.Shopping.Website.controller;
 
-import com.shoppingbackend.Shopping.Website.model.ApplicationUser;
 import com.shoppingbackend.Shopping.Website.service.AllUserDetails;
 import com.shoppingbackend.Shopping.Website.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

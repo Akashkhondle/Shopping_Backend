@@ -1,6 +1,5 @@
 package com.shoppingbackend.Shopping.Website.repository;
 
-import com.shoppingbackend.Shopping.Website.model.ApplicationUser;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;

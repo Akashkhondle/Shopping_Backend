@@ -1,6 +1,5 @@
 package com.shoppingbackend.Shopping.Website.controller;
 
-import com.shoppingbackend.Shopping.Website.model.ApplicationUser;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

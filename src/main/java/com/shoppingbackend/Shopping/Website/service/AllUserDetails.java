@@ -1,6 +1,5 @@
 package com.shoppingbackend.Shopping.Website.service;
 
-import com.shoppingbackend.Shopping.Website.model.ApplicationUser;
 import com.shoppingbackend.Shopping.Website.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
