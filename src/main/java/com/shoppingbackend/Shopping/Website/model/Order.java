@@ -14,8 +14,8 @@ import java.util.UUID;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "orders")
 public class Order {
-
     @Id
     private UUID id;
     @Column(nullable = false)
@@ -26,5 +26,4 @@ public class Order {
     AppUser buyer;
     @OneToMany
     List<Product> productList;
-
 }

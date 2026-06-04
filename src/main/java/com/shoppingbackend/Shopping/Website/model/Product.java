@@ -2,6 +2,7 @@ package com.shoppingbackend.Shopping.Website.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,6 +17,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product {
+    @Id
     private UUID id;
     @Column(nullable = false)
     private String productName;

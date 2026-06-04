@@ -1,36 +1,13 @@
 package com.shoppingbackend.Shopping.Website.repository;
 
+import com.shoppingbackend.Shopping.Website.model.AppUser;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.HashMap;
+import java.util.UUID;
 
 @Repository
-public class UserRepository {
+public interface UserRepository extends JpaRepository<AppUser, UUID> {
 
-    HashMap<String, ApplicationUser> userDB = new HashMap<>();
-
-    public void  saveUser(ApplicationUser user)
-    {
-        String mail = user.getEmail();
-        userDB.put(mail,user);
-    }
-
-    public ApplicationUser getUser(String email) {
-        ApplicationUser user = userDB.get(email);
-        return user;
-
-    }
-
-    public void updateUser(ApplicationUser user,String email) {
-        userDB.put(email,user);
-
-    }
-
-    public void deleteUser(String email) {
-        userDB.remove(email);
-    }
-
-    public HashMap<String, ApplicationUser> getDetails() {
-        return userDB;
-    }
+    public AppUser findByEmail(String userEmail);
 }
